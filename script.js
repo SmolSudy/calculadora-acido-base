@@ -78,7 +78,9 @@ document.getElementById('calculadoraForm').addEventListener('submit', function(e
     const fortaleza = this.fortaleza.value;
     const concentracion = parseFloat(this.concentracion.value);
     const decimales = parseInt(this.decimales.value);
-    let constante = this.constante.value ? parseFloat(this.constante.value) : null;
+    let constante = this.constante.value ? 
+        Number(this.constante.value.replace(/[^0-9e.-]/g, '')) : 
+        null;
     
     let ph;
     if (fortaleza === 'fuerte') {
