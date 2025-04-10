@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.theme-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+body.dark-mode header {
+    background-color: #2d2d2d;
+}
+
+.instrucciones, .ejemplos-ka-kb, .calculadora {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .instrucciones,
+body.dark-mode .ejemplos-ka-kb,
+body.dark-mode .calculadora {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 4px rgba(255,255,255,0.1);
+}
+
+.paso {
+    margin: 15px 0;
+    padding: 10px;
+    border-left: 4px solid #4CAF50;
+}
+
+.ejemplos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.ejemplo {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+body.dark-mode .ejemplo {
+    border-color: #444;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+    background-color: #333;
+    color: #fff;
+    border-color: #444;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.resultado {
+    margin-top: 20px;
+    padding: 15px;
+    border-left: 4px solid #2196F3;
+}
+
+.interpretacion {
+    font-weight: bold;
+    color: #2196F3;
+}
+
+body.dark-mode .interpretacion {
+    color: #64b5f6;
+}
+
+.pasos-calculo {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+body.dark-mode .pasos-calculo {
+    background-color: #333;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #666;
+}
+
+body.dark-mode footer {
+    color: #999;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    .calculadora {
+        padding: 10px;
+    }
+
+    input, select, button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .theme-switch {
+        position: static;
+        margin: 10px auto;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .ejemplos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resultado {
+        font-size: 16px;
+    }
+
+    .paso {
+        margin: 8px 0;
+    }
+}

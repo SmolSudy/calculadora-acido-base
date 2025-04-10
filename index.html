@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Calculadora Ácido-Base</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="theme-switch">
+        <label>
+            <input type="checkbox" id="darkModeToggle">
+            Modo Oscuro
+        </label>
+    </div>
+
+    <header>
+        <h1>Calculadora de pH Ácido-Base</h1>
+        <p>Una herramienta simple para calcular pH</p>
+    </header>
+
+    <section class="instrucciones">
+        <h2>¿Cómo usar esta calculadora?</h2>
+        <div class="paso">
+            <h3>Paso 1:</h3>
+            <p>Selecciona si tu solución es un ácido o una base</p>
+        </div>
+        <div class="paso">
+            <h3>Paso 2:</h3>
+            <p>Indica si es una sustancia fuerte o débil</p>
+        </div>
+        <div class="paso">
+            <h3>Paso 3:</h3>
+            <p>Ingresa la concentración en moles/litro (mol/L)</p>
+        </div>
+        <div class="paso">
+            <h3>Paso 4:</h3>
+            <p>Si es una sustancia débil, ingresa el valor de Ka o Kb</p>
+        </div>
+    </section>
+
+    <section class="ejemplos-ka-kb">
+        <h2>Valores comunes de Ka/Kb</h2>
+        <div class="ejemplos-grid">
+            <div class="ejemplo">
+                <h4>Ácidos comunes (Ka)</h4>
+                <ul>
+                    <li>Ácido acético: 1.8 × 10⁻⁵</li>
+                    <li>Ácido fluorhídrico: 6.8 × 10⁻⁴</li>
+                    <li>Ácido fórmico: 1.8 × 10⁻⁴</li>
+                </ul>
+            </div>
+            <div class="ejemplo">
+                <h4>Bases comunes (Kb)</h4>
+                <ul>
+                    <li>Amoniaco: 1.8 × 10⁻⁵</li>
+                    <li>Metilamina: 4.4 × 10⁻⁴</li>
+                    <li>Piridina: 1.7 × 10⁻⁹</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="calculadora">
+        <h2>Calculadora</h2>
+        <form id="calculadoraForm">
+            <div class="form-group">
+                <label>Tipo de solución:</label>
+                <select name="tipo" required>
+                    <option value="acido">Ácido</option>
+                    <option value="base">Base</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Fortaleza:</label>
+                <select name="fortaleza" required>
+                    <option value="fuerte">Fuerte</option>
+                    <option value="debil">Débil</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Concentración (mol/L):</label>
+                <input type="number" name="concentracion" step="0.0001" min="0" required>
+            </div>
+
+            <div class="form-group" id="ka-kb-group">
+                <label>Ka/Kb (para sustancias débiles):</label>
+                <input type="number" name="constante" step="0.0000001" min="0" placeholder="Ejemplo: 1.8e-5">
+            </div>
+
+            <div class="form-group">
+                <label>Número de decimales en el resultado:</label>
+                <select name="decimales" required>
+                    <option value="2">2 decimales</option>
+                    <option value="3">3 decimales</option>
+                    <option value="4">4 decimales</option>
+                    <option value="5">5 decimales</option>
+                </select>
+            </div>
+
+            <button type="submit">Calcular pH</button>
+        </form>
+
+        <div id="resultado" style="display: none;">
+            <h3>Resultados:</h3>
+            <p>El pH es: <span id="ph-valor"></span></p>
+            <p>[H⁺] = <span id="h-valor"></span> M</p>
+            <p>[OH⁻] = <span id="oh-valor"></span> M</p>
+            <p class="interpretacion" id="interpretacion"></p>
+        </div>
+
+        <div id="pasos-calculo" style="display: none;">
+            <h3>Proceso de cálculo:</h3>
+            <ol id="pasos-lista">
+            </ol>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Calculadora Química</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
